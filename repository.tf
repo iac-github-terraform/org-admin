@@ -34,7 +34,7 @@ resource "github_branch_protection" "org_admin" {
 }
 
 resource "github_team_repository" "org_admin" {
-  team_id    = github_team.team1.id
+  team_id    = github_team.team3.id
   repository = github_repository.org_admin.name
   permission = "admin"
 }
@@ -69,13 +69,13 @@ resource "github_branch_protection" "events_repo" {
 }
 
 resource "github_team_repository" "events_repo" {
-  team_id    = github_team.team2.id
+  team_id    = github_team.team4.id
   repository = github_repository.events_repo.name
   permission = "admin"
 }
 
 resource "github_team_repository" "events_repo_admin" {
-  team_id    = github_team.team1.id
+  team_id    = github_team.team3.id
   repository = github_repository.events_repo.name
   permission = "admin"
 }

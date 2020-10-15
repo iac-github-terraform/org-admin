@@ -1,5 +1,5 @@
-resource "github_membership" "org_bot" {
-  username = "org-bot"
+resource "github_membership" "org_admin_bot" {
+  username = "org-admin-bot"
   role     = "admin"
 }
 
