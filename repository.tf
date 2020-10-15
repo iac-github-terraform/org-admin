@@ -1,6 +1,6 @@
 # the terraform resource for the repository
-resource "github_repository" "organisation_admin" {
-  name        = "organisation-admin"
+resource "github_repository" "org_admin" {
+  name        = "org-admin"
   description = "Code that controls the overall organisation and base set up"
 
   private                = false
@@ -16,8 +16,8 @@ resource "github_repository" "organisation_admin" {
 }
 
 # Set up baseline configs for the repo
-resource "github_branch_protection" "organisation_admin" {
-  repository = github_repository.organisation_admin.name
+resource "github_branch_protection" "org_admin" {
+  repository = github_repository.org_admin.name
   branch     = "main"
 
   required_status_checks {
@@ -33,9 +33,9 @@ resource "github_branch_protection" "organisation_admin" {
   }
 }
 
-resource "github_team_repository" "organisation_admin" {
+resource "github_team_repository" "org_admin" {
   team_id    = github_team.team1.id
-  repository = github_repository.organisation_admin.name
+  repository = github_repository.org_admin.name
   permission = "admin"
 }
 
