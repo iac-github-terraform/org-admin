@@ -1,4 +1,4 @@
-resource "github_team" "team3" {
+/*resource "github_team" "team3" {
   name        = "team3"
   description = "Team responsible for making magic happen"
   privacy     = "closed"
@@ -20,4 +20,4 @@ resource "github_team_membership" "team4" {
   team_id  = github_team.team4.id
   username = github_membership.team_bot.username
   role     = "maintainer"
-}
+}*/

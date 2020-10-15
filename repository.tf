@@ -16,24 +16,24 @@ resource "github_repository" "org_admin" {
 }
 
 # Set up baseline configs for the repo
-resource "github_branch_protection" "org_admin" {
+/*resource "github_branch_protection" "org_admin" {
   repository = github_repository.org_admin.name
   branch     = "main"
 
   required_status_checks {
     # require up to date before merging
-    strict = false
+    strict = false*/
     // not required as would create unndecessary dependency on a folder that may not have changed
     //    contexts = ["atlas/mononoke/github-admin",
     //    "atlas/mononoke/terraform-cloud-admin", ]
-  }
+ /* }
   required_pull_request_reviews {
     dismiss_stale_reviews      = true
     require_code_owner_reviews = false
   }
-}
+}*/
 
-resource "github_team_repository" "org_admin" {
+/*resource "github_team_repository" "org_admin" {
   team_id    = github_team.team3.id
   repository = github_repository.org_admin.name
   permission = "admin"
@@ -78,4 +78,4 @@ resource "github_team_repository" "events_repo_admin" {
   team_id    = github_team.team3.id
   repository = github_repository.events_repo.name
   permission = "admin"
-}
+}*/
